@@ -16,14 +16,8 @@ def Fadd():
                 tempo = float(input("Digite o tempo de duração (em Horas): "))
                 localizacao = input("Digite a localização do lugar: ")
                 condicoes_climaticas =input("Digite a condição climática (Neve, Chuva, Ensolarado ou Nublado): ")
-<<<<<<< Updated upstream
-                for i in range(qt_rT):
-                    arquivotxt.write(f"{i+1}º TREINO->|Data: {data}|Distância: {distancia}km |Tempo de duração: {tempo}h|Localização: {localizacao}|Condição climática: {condicoes_climaticas}|")
-                    i+=1
-=======
                 T[quantT]=(f"{quantT}º TREINO-> |Data: {data}|Distância: {distancia}Km|Tempo de duração: {tempo}h|Localização: {localizacao}|Condição climática: {condicoes_climaticas}\n")
                 arquivotxt.write(T[quantT])
->>>>>>> Stashed changes
             except ValueError:
                 print("Alguma informação digitada é inválida")
     elif addT_C=="C":
@@ -34,23 +28,6 @@ def Fadd():
                 tempo = float(input(" Digite o tempo de duração (em Horas): "))
                 localizacao = input(" Digite a localização do lugar: ")
                 condicoes_climaticas =input("Digite a condição climática (Neve, Chuva, Ensolarado ou Nublado): ")
-<<<<<<< Updated upstream
-                for i in range(qt_rC):
-                    arquivotxt.write(f"{i+1}ª COMPETIÇÃO-> |Data: {data} |Distância: {distancia}km |Tempo de duração: {tempo}h |Localização: {localizacao} |Condição climática: {condicoes_climaticas}|")
-                    i+=1
-            except ValueError:
-                print("Alguma informação digitada é inválida")
-
-def vizu1():
-    with open('treinos.txt','r') as arquivotxt:
-        for i in arquivotxt:
-            print(i)
-
-def vizu2():
-    with open('competicoes.txt','r') as arquivotxt:
-        for i in arquivotxt:
-            print(i)
-=======
                 C[quantC]=(f"{quantC}ª COMPETIÇÃO-> |Data: {data}|Distância: {distancia}Km|Tempo de duração: {tempo}h|Localização: {localizacao}|Condição climática: {condicoes_climaticas}\n")
                 arquivotxt.write(C[quantC])
             except ValueError:
@@ -134,7 +111,6 @@ def Fexc():
 
         with open('competicoes.txt','w') as arquivotxt:
             arquivotxt.writelines(CompExc[numExc-1])
->>>>>>> Stashed changes
 
 print("Digite 1 para fazer um registro")
 print("Digite 2 para visualizar os registros")
@@ -149,20 +125,6 @@ while opc!=7:
     
     if opc==1:
         print("Digite T para treino \nDigite C para competição")
-<<<<<<< Updated upstream
-        t_c=input("Quer registrar treino ou competição?: ")
-        if t_c=="T":
-            qt_rT+=1
-        elif t_c=="C":
-            qt_rC+=1
-        else:
-            print("Opção inválida")
-        add()
-        
-    elif opc==2:
-        vizu1()
-        vizu2()
-=======
         addT_C=input("Quer registrar um treino ou uma competição?: ")
         if addT_C=="T":
                 quantT+=1
@@ -176,7 +138,6 @@ while opc!=7:
         print("Digite T para treino \nDigite C para competição")
         vizuT_C=input("Quer vizualizar os registros dos treinos ou das competições?: ")
         Fvizu()
->>>>>>> Stashed changes
 
     elif opc==3:
         print("Digite T para treino \nDigite C para competição")
