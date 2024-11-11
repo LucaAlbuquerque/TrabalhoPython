@@ -25,7 +25,7 @@ def Fadd():
             try:
                 data = input(" Digite a data da ocasião (formato DD-MM-YYYY): ")
                 distancia = float(input(" Digite a distância percorrida (em KM): "))
-                tempo = float(input(" Digite o tempo de duração (em Horas): "))
+                tempo = float(input(" Digite o tempo de duração (em horas): "))
                 localizacao = input(" Digite a localização do lugar: ")
                 condicoes_climaticas =input("Digite a condição climática (Neve, Chuva, Ensolarado ou Nublado): ")
                 C[quantC]=(f"{quantC}ª COMPETIÇÃO-> |Data: {data}|Distância: {distancia}Km|Tempo de duração: {tempo}h|Localização: {localizacao}|Condição climática: {condicoes_climaticas}\n")
@@ -54,7 +54,7 @@ def Fupdt():
     
                 nova_data = input("Digite a nova data do treino (formato DD-MM-YYYY): ")
                 nova_distancia = float(input("Digite a nova distância percorrida (em KM): "))
-                novo_tempo = float(input("Digite o novo tempo de duração (em Horas): "))
+                novo_tempo = float(input("Digite o novo tempo de duração (em horas): "))
                 nova_localizacao = input("Digite a nova localização do lugar: ")
                 nova_condicoes_climaticas =input("Digite a nova condição climática (Neve, Chuva, Ensolarado ou Nublado): ")
                 Treino[numUpdt-1]=(f"{numUpdt}º TREINO-> |Data: {nova_data}|Distância: {nova_distancia}Km|Tempo de duração: {novo_tempo}h|Localização: {nova_localizacao}|Condição climática: {nova_condicoes_climaticas}\n")
@@ -68,17 +68,17 @@ def Fupdt():
         try:
             with open('competicoes.txt','r') as arquivotxt:
                 numUpdt=int(input("Digite o número da competição que você quer atualizar: "))
-                Comp=arquivotxt.readlines()
+                Competicao=arquivotxt.readlines()
     
                 nova_data = input("Digite a nova data da competição (formato DD-MM-YYYY): ")
                 nova_distancia = float(input("Digite a nova distância percorrida (em KM): "))
                 novo_tempo = float(input("Digite o novo tempo de duração (em Horas): "))
                 nova_localizacao = input("Digite a nova localização da competição: ")
                 nova_condicoes_climaticas =input("Digite a nova condição climática (Neve, Chuva, Ensolarado ou Nublado): ")
-                Comp[numUpdt-1]=(f"{numUpdt}ª COMPETIÇÃO-> |Data: {nova_data}|Distância: {nova_distancia}Km|Tempo de duração: {novo_tempo}h|Localização: {nova_localizacao}|Condição climática: {nova_condicoes_climaticas}\n")
+                Competicao[numUpdt-1]=(f"{numUpdt}ª COMPETIÇÃO-> |Data: {nova_data}|Distância: {nova_distancia}Km|Tempo de duração: {novo_tempo}h|Localização: {nova_localizacao}|Condição climática: {nova_condicoes_climaticas}\n")
 
             with open('competicoes.txt','w') as arquivotxt:
-                arquivotxt.writelines(Comp[numUpdt-1])
+                arquivotxt.writelines(Competicao[numUpdt-1])
         except ValueError:
             print("Erro ao atualizar competição")
     
@@ -96,7 +96,7 @@ def Fexc():
             print("Número inválido")
 
         with open('treinos.txt','w') as arquivotxt:
-            arquivotxt.writelines(TreinoExc[numExc-1])
+            arquivotxt.writelines(TreinoExc)
 
     elif excT_C=="C":
         try:
@@ -110,7 +110,7 @@ def Fexc():
             print("Número inválido")
 
         with open('competicoes.txt','w') as arquivotxt:
-            arquivotxt.writelines(CompExc[numExc-1])
+            arquivotxt.writelines(CompExc)
 
 print("Digite 1 para fazer um registro")
 print("Digite 2 para visualizar os registros")
