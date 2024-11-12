@@ -149,5 +149,5 @@ while opc!=7:
         excT_C=input("Quer excluir um registro de treino ou de competição?: ")
         Fexc()
 
-    fazio
+    
           
