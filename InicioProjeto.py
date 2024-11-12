@@ -126,7 +126,7 @@ while opc!=7:
     
     if opc==1:
         print("Digite T para treino \nDigite C para competição")
-        addT_C=input("Quer registrar um treino ou uma competição?: ")
+        addT_C=input("Quer registrar um treino ou uma competição?: ").upper()
         if addT_C=="T":
                 quantT+=1
         elif addT_C=="C":
@@ -137,17 +137,17 @@ while opc!=7:
         
     elif opc==2:
         print("Digite T para treino \nDigite C para competição")
-        vizuT_C=input("Quer vizualizar os registros dos treinos ou das competições?: ")
+        vizuT_C=input("Quer vizualizar os registros dos treinos ou das competições?: ").upper()
         Fvizu()
 
     elif opc==3:
         print("Digite T para treino \nDigite C para competição")
-        updtT_C=input("Quer atualizar os registros dos treinos ou das competições?: ")
+        updtT_C=input("Quer atualizar os registros dos treinos ou das competições?: .upper()
         Fupdt()
 
     elif opc==4:
         print("Digite T para treino \nDigite C para competição")
-        excT_C=input("Quer excluir um registro de treino ou de competição?: ")
+        excT_C=input("Quer excluir um registro de treino ou de competição?: ").upper()
         Fexc()
     
     elif opc==5:
