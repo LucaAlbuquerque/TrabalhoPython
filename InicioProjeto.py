@@ -202,7 +202,7 @@ while opc!=8:
             km_dez = float(input("Quantos km você correu em dezembro? "))
             total_corrido = atualizar_progresso(km_dez, meta_anual, total_corrido)
 
-    elif opc==7 
+    elif opc==7:
         def buscar_corrida_mais_proxima(data_inserida):
             corridas_futuras = [corrida for corrida in corridas if corrida["data"] > data_inserida]
 
