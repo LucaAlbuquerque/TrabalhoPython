@@ -7,6 +7,12 @@ quantC=0
 T={}
 C={}
 total_corrido = 0
+corridas = [
+    {"nome": "Corrida das Estações", "data": "2024-11-10"},
+    {"nome": "Corrida Track & Field - Recife", "data": "2024-12-01"},
+    {"nome": "Meia Maratona Agamenon Magalhães", "data": "2024-11-15"},
+    {"nome": "Meia Maratona da Cidade", "data": "2025-01-20"},
+]
 
 def Fadd():
     if addT_C=="T":
@@ -119,9 +125,9 @@ print("Digite 3 para atualizar os registros")
 print("Digite 4 para excluir um registro")
 print("Digite 5 para adicionar metas e desafios")
 print("Digite 6 para atualizar metas e desafios")
-print("Digite 7 para parar")
-
-while opc!=7:
+print("Digite 7 para acessar datas das corridas mais proximas")
+print("Digite 8 para parar")
+while opc!=8:
     opc=int(input("Digite o que você quer fazer: "))
     
     if opc==1:
@@ -196,5 +202,18 @@ while opc!=7:
             km_dez = float(input("Quantos km você correu em dezembro? "))
             total_corrido = atualizar_progresso(km_dez, meta_anual, total_corrido)
 
-    
+    elif opc==7 
+        def buscar_corrida_mais_proxima(data_inserida):
+            corridas_futuras = [corrida for corrida in corridas if corrida["data"] > data_inserida]
+
+            if not corridas_futuras:
+                return "Não há corridas a céu aberto após essa data."
+
+            corrida_proxima = min(corridas_futuras, key=lambda x: x["data"])
+
+            return f"A corrida mais próxima é: {corrida_proxima['nome']} na data {corrida_proxima['data']}."
+
+        data_usuario = input("Insira uma data (formato YYYY-MM-DD): ")
+        resultado = buscar_corrida_mais_proxima(data_usuario)
+        print(resultado)
           
