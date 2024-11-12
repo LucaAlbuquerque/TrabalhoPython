@@ -142,7 +142,7 @@ while opc!=7:
 
     elif opc==3:
         print("Digite T para treino \nDigite C para competição")
-        updtT_C=input("Quer atualizar os registros dos treinos ou das competições?: .upper()
+        updtT_C=input("Quer atualizar os registros dos treinos ou das competições?: ").upper()
         Fupdt()
 
     elif opc==4:
