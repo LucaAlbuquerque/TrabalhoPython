@@ -148,4 +148,6 @@ while opc!=7:
         print("Digite T para treino \nDigite C para competição")
         excT_C=input("Quer excluir um registro de treino ou de competição?: ")
         Fexc()
+
+    fazio
           
