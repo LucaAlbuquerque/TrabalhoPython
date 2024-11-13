@@ -8,10 +8,10 @@ T={}
 C={}
 total_corrido = 0
 corridas = [
-    {"nome": "Corrida das Estações", "data": "2024-11-10"},
-    {"nome": "Corrida Track & Field - Recife", "data": "2024-12-01"},
-    {"nome": "Meia Maratona Agamenon Magalhães", "data": "2024-11-15"},
-    {"nome": "Meia Maratona da Cidade", "data": "2025-01-20"},
+    {"Nome": "Corrida das Estações", "Data": "10-11-2024"},
+    {"Nome": "Corrida Track & Field", "Data": "01-12-2024"},
+    {"Nome": "Meia Maratona Agamenon Magalhães", "Data": "15-11-2024"},
+    {"Nome": "Meia Maratona da Cidade", "Data": "20-01-2025"},
 ]
 meta_anual = {}
 
@@ -20,33 +20,33 @@ def Fadd():
         with open('treinos.txt','a') as arquivotxt:
             try:
                 data = input("Digite a data da ocasião (formato DD-MM-YYYY): ")
-                distancia = float(input("Digite a distância percorrida (em KM): "))
-                tempo = float(input("Digite o tempo de duração (em Horas): "))
-                localizacao = input("Digite a localização: ")
-                condicoes_climaticas =input("Digite a condição climática (Neve, Chuva, Ensolarado ou Nublado): ")
-                T[quantT]=(f"{quantT}º TREINO-> |Data: {data}|Distância: {distancia}Km|Tempo de duração: {tempo}h|Localização: {localizacao}|Condição climática: {condicoes_climaticas}\n")
+                distancia = float(input("Digite a distância percorrida (em km): "))
+                tempo = float(input("Digite o tempo de duração (em horas): "))
+                localizacao = input("Digite a localização do treino: ")
+                condicoes_climaticas = input("Digite a condição climática (neve ou chuva ou ensolarado ou nublado): ")
+                T[quantT]=(f"{quantT}º TREINO-> |Data: {data}|Distância: {distancia}km|Tempo de duração: {tempo}h|Localização: {localizacao}|Condição climática: {condicoes_climaticas}\n")
                 arquivotxt.write(T[quantT])
             except ValueError:
                 print("Alguma informação digitada é inválida")
     elif addT_C=="C":
         with open('competicoes.txt','a') as arquivotxt:
             try:
-                data = input(" Digite a data da ocasião (formato DD-MM-YYYY): ")
-                distancia = float(input(" Digite a distância percorrida (em KM): "))
-                tempo = float(input(" Digite o tempo de duração (em horas): "))
-                localizacao = input(" Digite a localização: ")
-                condicoes_climaticas =input("Digite a condição climática (Neve, Chuva, Ensolarado ou Nublado): ")
-                C[quantC]=(f"{quantC}ª COMPETIÇÃO-> |Data: {data}|Distância: {distancia}Km|Tempo de duração: {tempo}h|Localização: {localizacao}|Condição climática: {condicoes_climaticas}\n")
+                data = input("Digite a data da ocasião (formato DD-MM-YYYY): ")
+                distancia = float(input("Digite a distância percorrida (em km): "))
+                tempo = float(input("Digite o tempo de duração (em horas): "))
+                localizacao = input("Digite a localização da competição: ")
+                condicoes_climaticas =input("Digite a condição climática (neve ou chuva ou ensolarado ou nublado): ")
+                C[quantC]=(f"{quantC}ª COMPETIÇÃO-> |Data: {data}|Distância: {distancia}km|Tempo de duração: {tempo}h|Localização: {localizacao}|Condição climática: {condicoes_climaticas}\n")
                 arquivotxt.write(C[quantC])
             except ValueError:
                 print("Alguma informação digitada é inválida")
 
-def Fvizu():
-    if vizuT_C=="T":
+def Fvisu():
+    if visuT_C=="T":
         with open('treinos.txt','r') as arquivotxt:
             for i in arquivotxt:
                 print(i)
-    elif vizuT_C=="C":
+    elif visuT_C=="C":
         with open('competicoes.txt','r') as arquivotxt:
             for i in arquivotxt:
                 print(i)
@@ -61,11 +61,11 @@ def Fupdt():
                 Treino=arquivotxt.readlines()
     
                 nova_data = input("Digite a nova data do treino (formato DD-MM-YYYY): ")
-                nova_distancia = float(input("Digite a nova distância percorrida (em KM): "))
+                nova_distancia = float(input("Digite a nova distância percorrida (em km): "))
                 novo_tempo = float(input("Digite o novo tempo de duração (em horas): "))
-                nova_localizacao = input("Digite a nova localização: ")
-                nova_condicoes_climaticas =input("Digite a nova condição climática (Neve, Chuva, Ensolarado ou Nublado): ")
-                Treino[numUpdt-1]=(f"{numUpdt}º TREINO-> |Data: {nova_data}|Distância: {nova_distancia}Km|Tempo de duração: {novo_tempo}h|Localização: {nova_localizacao}|Condição climática: {nova_condicoes_climaticas}\n")
+                nova_localizacao = input("Digite a nova localização do treino: ")
+                nova_condicoes_climaticas =input("Digite a nova condição climática (neve ou chuva ou ensolarado ou nublado): ")
+                Treino[numUpdt-1]=(f"{numUpdt}º TREINO-> |Data: {nova_data}|Distância: {nova_distancia}km|Tempo de duração: {novo_tempo}h|Localização: {nova_localizacao}|Condição climática: {nova_condicoes_climaticas}\n")
 
             with open('treinos.txt','w') as arquivotxt:
                 arquivotxt.writelines(Treino[numUpdt-1])
@@ -79,11 +79,11 @@ def Fupdt():
                 Competicao=arquivotxt.readlines()
     
                 nova_data = input("Digite a nova data da competição (formato DD-MM-YYYY): ")
-                nova_distancia = float(input("Digite a nova distância percorrida (em KM): "))
-                novo_tempo = float(input("Digite o novo tempo de duração (em Horas): "))
+                nova_distancia = float(input("Digite a nova distância percorrida (em km): "))
+                novo_tempo = float(input("Digite o novo tempo de duração (em horas): "))
                 nova_localizacao = input("Digite a nova localização da competição: ")
-                nova_condicoes_climaticas =input("Digite a nova condição climática (Neve, Chuva, Ensolarado ou Nublado): ")
-                Competicao[numUpdt-1]=(f"{numUpdt}ª COMPETIÇÃO-> |Data: {nova_data}|Distância: {nova_distancia}Km|Tempo de duração: {novo_tempo}h|Localização: {nova_localizacao}|Condição climática: {nova_condicoes_climaticas}\n")
+                nova_condicoes_climaticas =input("Digite a nova condição climática (neve ou chuva ou ensolarado ou nublado): ")
+                Competicao[numUpdt-1]=(f"{numUpdt}ª COMPETIÇÃO-> |Data: {nova_data}|Distância: {nova_distancia}km|Tempo de duração: {novo_tempo}h|Localização: {nova_localizacao}|Condição climática: {nova_condicoes_climaticas}\n")
 
             with open('competicoes.txt','w') as arquivotxt:
                 arquivotxt.writelines(Competicao[numUpdt-1])
@@ -92,7 +92,6 @@ def Fupdt():
     
 def Fexc():
     if excT_C=="T":
-
         try:
             with open('treinos.txt','r') as arquivotxt:
                 numExc=int(input("Digite o número do registro que você quer excluir: "))
@@ -102,7 +101,6 @@ def Fexc():
 
         except ValueError:
             print("Número inválido")
-
         with open('treinos.txt','w') as arquivotxt:
             arquivotxt.writelines(TreinoExc)
 
@@ -116,18 +114,17 @@ def Fexc():
 
         except ValueError:
             print("Número inválido")
-
         with open('competicoes.txt','w') as arquivotxt:
             arquivotxt.writelines(CompExc)
 
 print("Digite 1 para fazer um registro")
-print("Digite 2 para visualizar os registros")
-print("Digite 3 para atualizar os registros")
+print("Digite 2 para visualizar o(s) registro(s)")
+print("Digite 3 para atualizar o(s) registro(s)")
 print("Digite 4 para excluir um registro")
 print("Digite 5 para adicionar metas e desafios")
 print("Digite 6 para atualizar metas e desafios")
 print("Digite 7 para filtrar treinos ou competições")
-print("Digite 8 para acessar datas das corridas mais proximas")
+print("Digite 8 para acessar datas das corridas mais próximas")
 print("Digite 9 para parar")
 while opc!=9:
     opc=int(input("Digite o que você quer fazer: "))
@@ -145,8 +142,8 @@ while opc!=9:
         
     elif opc==2:
         print("Digite T para treino \nDigite C para competição")
-        vizuT_C=input("Quer vizualizar os registros dos treinos ou das competições?: ").upper()
-        Fvizu()
+        visuT_C = input("Quer visualizar os registros dos treinos ou das competições?: ").upper()
+        Fvisu()
 
     elif opc==3:
         print("Digite T para treino \nDigite C para competição")
@@ -155,7 +152,7 @@ while opc!=9:
 
     elif opc==4:
         print("Digite T para treino \nDigite C para competição")
-        excT_C=input("Quer excluir um registro de treino ou de competição?: ").upper()
+        excT_C=input("Quer excluir um registro de um treino ou de uma competição?: ").upper()
         Fexc()
     
     elif opc==5:
@@ -164,9 +161,9 @@ while opc!=9:
             total_corrido += km_corrido
             km_restante = meta_anual - total_corrido
             if km_restante > 0:
-                print(f"Faltam {km_restante} km para cumprir a meta anual.")
+                print(f"Faltam {km_restante}km para cumprir a meta anual.")
             else:
-                print(f"Parabéns, Pedro! Você já atingiu a meta anual com {total_corrido} km percorridos.")
+                print(f"Parabéns, Pedro! Você já atingiu a meta anual com {total_corrido}km percorridos.")
             return total_corrido
 
         km_jan = float(input("Quantos km você correu em janeiro? "))
@@ -235,13 +232,13 @@ while opc!=9:
             corridas_futuras = [corrida for corrida in corridas if corrida["data"] > data_inserida]
 
             if not corridas_futuras:
-                return "Não há corridas a céu aberto após essa data."
+                return "Não há corridas após essa data, tente novamente com uma data mais próxima."
 
             corrida_proxima = min(corridas_futuras, key=lambda x: x["data"])
 
             return f"A corrida mais próxima é: {corrida_proxima['nome']} na data {corrida_proxima['data']}."
 
-        data_usuario = input("Insira uma data (formato YYYY-MM-DD): ")
+        data_usuario = input("Insira uma data (formato DD-MM-YYYY): ")
         resultado = buscar_corrida_mais_proxima(data_usuario)
         print(resultado)
           
