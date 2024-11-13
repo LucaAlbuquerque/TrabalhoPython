@@ -206,29 +206,29 @@ while opc!=9:
         total_corrido = atualizar_progresso(km_dez, meta_anual, total_corrido)
 
     elif opc==7:
-        opt_fil = input(" \t[T]-TREINOs \t[C]-COMPETIÇÕES Digite a opção desejada: ")
+        opt_fil = input(" \t[T] TREINOS \t[C] COMPETIÇÕES - Digite a opção desejada: ")
         if opt_fil=='T':
-            filt_tre = input(" \t[T]-FILTRAR POR TEMPO(DURAÇÃO) \t[D]-FILTRAR POR DISTÂNCIA Digite a opção desejada: ")
+            filt_tre = input(" \t[T] FILTRAR POR TEMPO (DURAÇÃO) \t[D] FILTRAR POR DISTÂNCIA - Digite a opção desejada: ")
             if filt_tre=='T':
-                tempo_tre=input(" \nDigite o tempo do treino que deseja encontrar: ")
-                print(tempo.pop(tempo_tre, "treino não encontrado"))
+                tempo_tre=input(" \nDigite a duração do treino que deseja encontrar: ")
+                print(tempo.pop(tempo_tre, "Treino não encontrado"))
             elif filt_tre=='D':
                 dist_tre=input(" \nDigite a distância pecorrida no treino que deseja encontrar: ")
                 print(distancia.pop(dist_tre, "Treino não encontrado"))
             else:
                 print(" Opção inválida ")
         elif opt_fil=='C':
-            filt_com = input(" \t[T]-FILTRAR POR TEMPO(DURAÇÃO) \t[D]-FILTRAR POR DISTÂNCIA Digite a opção desejada: ")
+            filt_com = input(" \t[T] FILTRAR POR TEMPO (DURAÇÃO) \t[D] FILTRAR POR DISTÂNCIA - Digite a opção desejada: ")
             if filt_com=='T':
-                tempo_com=input(" \nDigite o tempo da competição que deseja encontrar: ")
+                tempo_com=input(" \nDigite a duração da competição que deseja encontrar: ")
                 print(tempo.pop(tempo, "Competição não encontrada"))
             elif filt_com=='D':
                 dist_com=input(" \nDigite a distância pecorrida na competição que deseja encontrar: ")
                 print(distancia.pop(distancia, "Competição não encontrada"))
             else:
-                print(" Opção inválida ")
+                print("Opção inválida! ")
         else:
-            print(" Opção inválida ")
+            print("Opção inválida! ")
 
     elif opc==8:
         def buscar_corrida_mais_proxima(data_inserida):
