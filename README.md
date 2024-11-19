@@ -1,19 +1,65 @@
->Projeto Python 2024.2 CC-A
-### O nosso projeto é uma "plataforma" de gerenciamentos de treinos e competições para Pedro. Com todas as suas nove funcionalidades, Pedro ou qualquer usuário tem um controle total de seus treinos e progressão até chegar as competições de alto nivel na corrida de rua, um esporte que está em alta no cotidiano do brasileiro.
+# **Projeto Python 2024.2 CC-A**
 
-## Funcionalidades: 
-### A plataforma conta com 9 (nove) funcionalidades entre elas:
--**1**. Registrar treino ou competição: inserindo essa opção, o sistema irá perguntar T ou C, para treino ou competição. Vai ser apresentado ao usuario algumas perguntas como: qual local, tempo, clima...
--**2**. Vizualizar os demais treinos ou competições: Inserindo a opção "Vizualizar" o sistema pergunta se o usuario quer vizualizar T ou C, e qual treino, até porque ele pode inserir dezenas de treinos.
--**3**. Atualizar os registros: Nessa opção o usuario pode atualizar o T ou C que desejar. 
--**4**. Excluir um registro: Excluir algum registro de T ou C.
--**5**. Registrar metas e desafios: Nessa opção, o usuário será questionado sobre: meta de treino ou competição ( T / C)? Quanto tempo deseja bater essa meta (semanas, meses ou anos), em quantas semanas, meses ou anos essa meta será batida e por fim qual a meta em KM.
--**6**. Atualizar o progresso das metas e desafios: Muito intuitivo. Atualizar a meta que o usuário estipulou, inserindo quantos KMs ja foi corrido e quantos faltam para bater a meta.
--**7**. Calcular seu pace (velocidade média): Inserindo essa opção, o usuario precisa ter registrado algum treino ou competição antes, e como será registrado o tempo e a kilometragem corrida, o sistema calculará o pace.
--**8**. Filtrar os registros: 
--**9**. Sugestão de treino aleatório: Nessa função, será sugerida ao usuário um treino completamente aleatório, sendo
--**Todas as funcionalidades são intuitivas e bem direta com o usuário.**
+### **Plataforma de Gerenciamento de Treinos e Competições**
 
-Utilizamos o Python e as bibliotecas 'random' e 'os' 
+Nossa plataforma foi desenvolvida para oferecer um controle completo de treinos e competições, ajudando Pedro (ou qualquer usuário) a gerenciar sua progressão no esporte e alcançar competições de alto nível na corrida de rua. Com nove funcionalidades, o sistema permite acompanhar a evolução de forma prática e intuitiva, adaptando-se ao cotidiano dos corredores brasileiros.
 
-[Visite nosso repositórios:] (https://github.com/LucaAlbuquerque/TrabalhoPython2)
+---
+
+## **Funcionalidades**
+
+A plataforma conta com **9 funcionalidades principais**, descritas a seguir:
+
+1. **Registrar Treino ou Competição**  
+   - Ao selecionar esta opção, o sistema pergunta: **T ou C** (Treino ou Competição).  
+   - Em seguida, solicita informações como:  
+     - Local  
+     - Tempo  
+     - Clima  
+     - Outras informações relevantes  
+
+2. **Visualizar Treinos ou Competições**  
+   - O sistema permite visualizar registros de **T ou C**.  
+   - Caso o usuário tenha inserido vários treinos, ele poderá filtrar o registro desejado.
+
+3. **Atualizar os Registros**  
+   - Com esta funcionalidade, é possível atualizar qualquer registro de treino ou competição.
+
+4. **Excluir um Registro**  
+   - Remove registros específicos de treino ou competição do sistema.
+
+5. **Registrar Metas e Desafios**  
+   - O sistema pergunta:  
+     - Meta relacionada a treino ou competição?  
+     - Tempo para atingir a meta (semanas, meses ou anos)?  
+     - Meta desejada (em KM).  
+
+6. **Atualizar o Progresso das Metas e Desafios**  
+   - O usuário pode acompanhar e atualizar os KMs já percorridos e quanto ainda falta para atingir sua meta.
+
+7. **Calcular o Pace (Velocidade Média)**  
+   - Baseado nos registros de treino ou competição, o sistema calcula o pace (tempo médio por quilômetro).
+
+8. **Filtrar os Registros**  
+   - Organize os treinos e competições por critérios como:  
+     - Distância  
+     - Tempo  
+     - Data  
+
+9. **Sugestão de Treino Aleatório**  
+   - Sugere um treino completamente aleatório, ideal para variar a rotina.
+
+---
+
+## **Tecnologias Utilizadas**
+
+- **Linguagem de Programação:** Python  
+- **Bibliotecas:**  
+  - `random`  
+  - `os`  
+
+Todas as funcionalidades foram desenvolvidas para serem **intuitivas e diretas**, garantindo uma experiência simples e eficiente para o usuário.
+
+---
+
+### [Visite nosso repositório no GitHub](https://github.com/LucaAlbuquerque/TrabalhoPython2)
