@@ -333,7 +333,7 @@ def Ffiltrar():
             else:
                 print("Opção inválida")
         except ValueError:
-            print("\nArquivo 'competicoes.txt' não foi encontrado.")
+            print("Arquivo não foi encontrado.")
     elif filtT_C == 'C':
         try:
             arquivotxt = open('competicoes.txt', 'r', encoding='utf8')
