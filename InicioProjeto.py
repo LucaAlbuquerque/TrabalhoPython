@@ -304,15 +304,69 @@ def Fextra():
         print("Opção inválida")  
 
 def Ffiltrar():
-    if filtT_C=="T":
-        arquivotxt = open('treinos.txt','r',encoding='utf8')
-        print(arquivotxt.read())
-        dis_ou_temp = input("Quer filtrar por tempo ou distância? (T / D)").upper()
+    if filtT_C == "T":  
+        try:
+            arquivotxt = open('treinos.txt', 'r', encoding='utf8')
+            treinos = arquivotxt.read()
+            print("\tTodos os treinos: ")
+            for treino in treinos:
+                print(treino.strip())
+                dis_ou_temp = input("\tDigite [D] para filtrar por distância \tDigite [T] para filtrar por tempo: ").upper()
+            if dis_ou_temp == "D":
+                distancia = float(input("Digite a distância desejada: "))
+                filtrados = [treino for treino in treinos if str(distancia) in treino]
+                if filtrados:
+                    print("\tEsses são os treinos filtrados por distância:")
+                    for treino in filtrados:
+                        print(treino.strip())
+                else:
+                    print("\nNenhum treino encontrado")
+            elif dis_ou_temp == "T":
+                tempo = float(input("Digite o tempo desejado(em horas): "))
+                filtrados = [treino for treino in treinos if str(tempo) in treino]
+                if filtrados:
+                    print("\tEsses são os treinos filtrados por tempo: ")
+                    for treino in filtrados:
+                        print(treino.strip())
+                    else:
+                        print("\nNenhum treino encontrado")
+            else:
+                print("Opção inválida")
+        except ValueError:
+            print("\nArquivo 'competicoes.txt' não foi encontrado.")
+    elif filtT_C == 'C':
+        try:
+            arquivotxt = open('competicoes.txt', 'r', encoding='utf8')
+            competicoes = arquivotxt.read()
+            print("\tTodas competições: ")
+            for competicao in competicoes:
+                print(competicao.strip())
+                dis_ou_temp = input("\tDigite [D] para filtrar por distância \tDigite [T] para filtrar por tempo: ").upper()
+            if dis_ou_temp == "D":
+                distancia = float(input("Digite a distância desejada: "))
+                filtrados = [competicao for competicao in competicoes if str(distancia) in competicao]
+                if filtrados:
+                    print("\tEssas são as competições filtrados por distância:")
+                    for competicao in filtrados:
+                        print(competicao.strip())
+                else:
+                    print("\nNenhum treino encontrado")
+            elif dis_ou_temp == "T":
+                tempo = float(input("Digite o tempo desejado(em horas): "))
+                filtrados = [competicao for competicao in competicoes if str(tempo) in competicao]
+                if filtrados:
+                    print("\tEssas são as competições filtrados por tempo: ")
+                    for competicao in competicoes:
+                        print(competicao.strip())
+                    else:
+                        print("\nNenhum treino encontrado")
+            else:
+                print("Opção inválida")
 
-    elif filtT_C=="C":
-        arquivotxt = open('competicoes.txt','r',encoding='utf8')
-        print(arquivotxt.read())
-        dias_ou_temp = input("Quer filtrar por tempo ou distância? (T \ D)").upper()
+        except ValueError:
+            print("\nArquivo 'treinos.txt' não foi encontrado.")
+    else:
+        print("\nOpção inválida")
 
 print("1. Fazer um registro")
 print("2. Visualizar os registros")
