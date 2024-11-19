@@ -289,33 +289,69 @@ def Fextra():
         print("Opção inválida")  
 
 def Ffiltrar():
-    if filtT_C=="T":
+    if filtT_C == "T":  
         try:
-            arquivotxt=open('treinos.txt','r',encoding='utf8')
-            print(arquivotxt.read())
-            dis_ou_temp=input("\tDigite [D] para filtrar por distância \tDigite [T] para filtrar por tempo").upper()
-            if dis_ou_temp=="D":
-                distancia=float(input("Digite a distância desejada: "))
-                filt_dist = Fvisu()
-                filtrados = [treino for treino in filt_dist if distancia==filt_dist]
+            arquivotxt = open('treinos.txt', 'r', encoding='utf8')
+            treinos = arquivotxt.read()
+            print("\tTodos os treinos: ")
+            for treino in treinos:
+                print(treino.strip())
+                dis_ou_temp = input("\tDigite [D] para filtrar por distância \tDigite [T] para filtrar por tempo: ").upper()
+            if dis_ou_temp == "D":
+                distancia = float(input("Digite a distância desejada: "))
+                filtrados = [treino for treino in treinos if str(distancia) in treino]
                 if filtrados:
+                    print("\tEsses são os treinos filtrados por distância:")
                     for treino in filtrados:
-                        print(treino)
+                        print(treino.strip())
                 else:
-                    print("Treino não encontrado")
+                    print("\nNenhum treino encontrado")
+            elif dis_ou_temp == "T":
+                tempo = float(input("Digite o tempo desejado(em horas): "))
+                filtrados = [treino for treino in treinos if str(tempo) in treino]
+                if filtrados:
+                    print("\tEsses são os treinos filtrados por tempo: ")
+                    for treino in filtrados:
+                        print(treino.strip())
+                    else:
+                        print("\nNenhum treino encontrado")
+            else:
+                print("Opção inválida")
         except ValueError:
-            print("Número inválido")
-    elif filtT_C=="C":
+            print("\nArquivo 'competicoes.txt' não foi encontrado.")
+    elif filtT_C == 'C':
         try:
-            arquivotxt=open('competicoes.txt','r',encoding='utf8')
-            print(arquivotxt.read())
-            dist_ou_temp=input("\tDigite D para filtrar por distância \tDigite T para filtrar por tempo").upper()
-            if dist_ou_temp=='D':
-                print("123456789")
+            arquivotxt = open('competicoes.txt', 'r', encoding='utf8')
+            competicoes = arquivotxt.read()
+            print("\tTodas competições: ")
+            for competicao in competicoes:
+                print(competicao.strip())
+                dis_ou_temp = input("\tDigite [D] para filtrar por distância \tDigite [T] para filtrar por tempo: ").upper()
+            if dis_ou_temp == "D":
+                distancia = float(input("Digite a distância desejada: "))
+                filtrados = [competicao for competicao in competicoes if str(distancia) in competicao]
+                if filtrados:
+                    print("\tEssas são as competições filtrados por distância:")
+                    for competicao in filtrados:
+                        print(competicao.strip())
+                else:
+                    print("\nNenhum treino encontrado")
+            elif dis_ou_temp == "T":
+                tempo = float(input("Digite o tempo desejado(em horas): "))
+                filtrados = [competicao for competicao in competicoes if str(tempo) in competicao]
+                if filtrados:
+                    print("\tEssas são as competições filtrados por tempo: ")
+                    for competicao in competicoes:
+                        print(competicao.strip())
+                    else:
+                        print("\nNenhum treino encontrado")
+            else:
+                print("Opção inválida")
+
         except ValueError:
-            print("987654321")
+            print("\nArquivo 'treinos.txt' não foi encontrado.")
     else:
-        print("Opção inválida")
+        print("\nOpção inválida")
 
 print("1. Fazer um registro")
 print("2. Visualizar os registros")
