@@ -1,2 +1,8 @@
-1º TREINO-> |Data: 05-02-2007|Distância: 10.0Km|Tempo de duração: 1.0h|Localização: Rec|Condição climática: Neve
-|Pace: 10.0Km/h
+1º TREINO-> |Data: 05-02-2007|Distância: 5.0Km|Tempo de duração: 0.5h|Localização: Rec|Condição climática: Neve
+2º TREINO-> |Data: 01-01-2024|Distância: 10.0Km|Tempo de duração: 1.0h|Localização: Rj|Condição climática: Chuva
+3º TREINO-> |Data: 05-01-1975|Distância: 21.0Km|Tempo de duração: 7.0h|Localização: Manaus|Condição climática: Ensolarado
+4º TREINO-> |Data: 13-08-2008|Distância: 42.0Km|Tempo de duração: 10.0h|Localização: Itamaracá|Condição climática: Nublado
+5º TREINO-> |Data: 04-11-1970|Distância: 15.0Km|Tempo de duração: 1.5h|Localização: Rec|Condição climática: Chuva
+6º TREINO-> |Data: 02-03-2006|Distância: 21.0Km|Tempo de duração: 7.5h|Localização: Piaui|Condição climática: Chuva
+7º TREINO-> |Data: 08-02-2008|Distância: 21.0Km|Tempo de duração: 8.0h|Localização: São Paulo|Condição climática: Nublado
+8º TREINO-> |Data: 06-12-2007|Distância: 45.0Km|Tempo de duração: 10.0h|Localização: Foz|Condição climática: Neve
