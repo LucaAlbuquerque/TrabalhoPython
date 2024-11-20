@@ -56,15 +56,15 @@ def Fadd():
                 C[quantC]=(f"{quantC}ª COMPETIÇÃO-> |Data: {data}|Distância: {distancia}Km|Tempo de duração: {tempo}h|Localização: {localizacao}|Condição climática: {condicoes_climaticas}\n")
                 for i in C:
                     arquivotxt.write(C[i])
-                print("Compeitição registrada com sucesso")
+                print("Competição registrada com sucesso!")
             except ValueError:
-                print("Alguma informação digitada é inválida")
+                print("Alguma informação digitada é inválida.")
             arquivotxt.close()
         except FileNotFoundError:
-            print("Arquivo não encontrado")
+            print("Arquivo não encontrado.")
     
     else:
-        print("Opção inválida")
+        print("Opção inválida.")
 
 def Fvisu():
     if vizuT_C=="T":
@@ -425,7 +425,7 @@ while opc!=10:
     print("8. Filtrar os registros")
     print("9. Sugestão de treino aleatório")
     print("10. Parar")
-    opc=int(input("Digite o que você quer fazer: "))
+    opc=int(input("\nDigite o que você quer fazer: "))
     
     if opc==1:
         addT_C = input("Quer registrar um treino ou uma competição?: (T \ C): ").upper()
