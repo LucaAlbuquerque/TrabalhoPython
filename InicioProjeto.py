@@ -68,112 +68,122 @@ def Fadd():
 
 def Fvisu():
     if vizuT_C=="T":
-        for i in T:
-            print(f"{i}. {T[i]}")
+        if not T:
+            print("Não há treinos registrados")
+        else:
+            for i in T:
+                print(f"{i}. {T[i]}")
     elif vizuT_C=="C":
-        for i in C:
-            print(f"{i}. {C[i]}")
+        if not C:
+            print("Não há competições registradas")
+        else:
+            for i in C:
+                print(f"{i}. {C[i]}")
     else:
         print("Opção inválida")
 
 def Fupdt():    
     if updtT_C=="T":
-        try:
-            with open('treinos.txt','r',encoding='utf8') as arquivotxt:
-                print("Treinos disponíveis para atualização:")
-                for i in T:
-                    print(f"{i}: {T[i]}")
-                try:
-                    numUpdt = int(input("Digite o número do treino que você quer atualizar: "))
-                    nova_data = input("Digite a nova data do treino (Formato DD-MM-YYYY): ")
-                    nova_distancia = float(input("Digite a nova distância percorrida (Em Km): "))
-                    distanciaPaceT[numUpdt]=nova_distancia 
-                    novo_tempo = float(input("Digite o novo tempo de duração (Em horas): "))
-                    tempoPaceT[numUpdt]=novo_tempo
-                    nova_localizacao = input("Digite a nova localização do treino: ")
-                    nova_condicoes_climaticas = input("Digite a nova condição climática (Neve / Chuva / Ensolarado / Nublado): ")
-                except ValueError:
-                    print("Alguma informação digitada é inválida")
-                    T[numUpdt]=(f"{numUpdt}º TREINO-> |Data: {nova_data}|Distância: {nova_distancia}Km|Tempo de duração: {novo_tempo}h|Localização: {nova_localizacao}|Condição climática: {nova_condicoes_climaticas}\n")
-            with open('treinos.txt','w',encoding='utf8') as arquivotxt:
-                for i in T:
-                    arquivotxt.write(T[i])
-            print("Treino atualizado com sucesso")
-        except FileNotFoundError:
-            print("Arquivo não encontrado")
+        if not T:
+            print("Não há treinos registrados")
+        else:
+            print("Treinos disponíveis para atualização:")
+            for i in T:
+                print(f"{i}: {T[i]}")
+            try:
+                numUpdt = int(input("Digite o número do treino que você quer atualizar: "))
+                nova_data = input("Digite a nova data do treino (Formato DD-MM-YYYY): ")
+                nova_distancia = float(input("Digite a nova distância percorrida (Em Km): "))
+                novo_tempo = float(input("Digite o novo tempo de duração (Em horas): "))
+                nova_localizacao = input("Digite a nova localização do treino: ")
+                nova_condicoes_climaticas = input("Digite a nova condição climática (Neve / Chuva / Ensolarado / Nublado): ")
+                T[numUpdt]=(f"{numUpdt}º TREINO-> |Data: {nova_data}|Distância: {nova_distancia}Km|Tempo de duração: {novo_tempo}h|Localização: {nova_localizacao}|Condição climática: {nova_condicoes_climaticas}\n")
+            except ValueError:
+                print("Alguma informação digitada é inváida")        
+            try:
+                with open('treinos.txt','w',encoding='utf8') as arquivotxt:
+                    for i in T:
+                        arquivotxt.write(T[i])
+                print("Treino atualizado com sucesso")
+            except FileNotFoundError:
+                print("Arquivo não encontrado")
 
     elif updtT_C=="C":
-        try:
-            with open('competicoes.txt','r',encoding='utf8') as arquivotxt:
-                print("Competições disponíveis para atualização: ")
-                for i in C:
-                    print(f"{i}: {C[i]}")
-                try:
-                    numUpdt = int(input("Digite o número da competição que você quer atualizar: "))
-                    nova_data = input("Digite a nova data da competição (Formato DD-MM-YYYY): ")
-                    nova_distancia = float(input("Digite a nova distância percorrida (Em Km): "))
-                    distanciaPaceC[numUpdt] = nova_distancia
-                    novo_tempo = float(input("Digite o novo tempo de duração (Em horas): "))
-                    tempoPaceC[numUpdt] = novo_tempo
-                    nova_localizacao = input("Digite a nova localização da competição: ")
-                    nova_condicoes_climaticas = input("Digite a nova condição climática (Neve / Chuva / Ensolarado / Nublado): ")
-                except ValueError:
-                    print("Alguma informação digitada é inválida")
+        if not C:
+            print("Não há competições registradas")
+        else:
+            print("Competições disponíveis para atualização: ")
+            for i in C:
+                print(f"{i}: {C[i]}")
+            try:
+                numUpdt = int(input("Digite o número da competição que você quer atualizar: "))
+                nova_data = input("Digite a nova data da competição (Formato DD-MM-YYYY): ")
+                nova_distancia = float(input("Digite a nova distância percorrida (Em Km): "))
+                novo_tempo = float(input("Digite o novo tempo de duração (Em horas): "))
+                nova_localizacao = input("Digite a nova localização da competição: ")
+                nova_condicoes_climaticas = input("Digite a nova condição climática (Neve / Chuva / Ensolarado / Nublado): ")
                 C[numUpdt]=(f"{numUpdt}ª COMPETIÇÃO-> |Data: {nova_data}|Distância: {nova_distancia}Km|Tempo de duração: {novo_tempo}h|Localização: {nova_localizacao}|Condição climática: {nova_condicoes_climaticas}\n")
-
-            with open('competicoes.txt','w',encoding='utf8') as arquivotxt:
-                for i in C:
-                    arquivotxt.write(C[i])
+            except ValueError:
+                print("Alguma informação digitada é inválida")
+            try:
+                with open('competicoes.txt','w',encoding='utf8') as arquivotxt:
+                    for i in C:
+                        arquivotxt.write(C[i])
+            except FileNotFoundError:
+                print("Arquivo não encontrado")
             print("Competição atualizada com sucesso")
-        except FileNotFoundError:
-            print("Arquivo não encontrado")
+    
     else:
         print("Opção inválida")
 
 def Fexc():
     if excT_C=="T":
-        try:
-            with open('treinos.txt','r',encoding='utf8') as arquivotxt:
-                print("Treinos disponíveis para excluir: ")
-                for i in T:
-                    print(f"{i}: {T[i]}")
-                try:
-                    numExc = int(input("Digite o número do registro de treino que você quer excluir: "))
-                except ValueError:
-                    print("Digite um valor inteiro")
-                if 1<=numExc<=len(T):
-                    del T[numExc]
-                    del distanciaPaceT[numExc]
-                    del tempoPaceT[numExc]
-            with open('treinos.txt','w',encoding='utf8') as arquivotxt:
-                for i in T:
-                    arquivotxt.write(T[i])
-        except FileNotFoundError:
-            print("Arquivo não encontrado")
+        if not T:
+            print("Não há treinos registrados")
+        else:
+            try:
+                with open('treinos.txt','r',encoding='utf8') as arquivotxt:
+                    print("Treinos disponíveis para excluir: ")
+                    for i in T:
+                        print(f"{i}: {T[i]}")
+                    try:
+                        numExc = int(input("Digite o número do registro de treino que você quer excluir: "))
+                    except ValueError:
+                        print("Digite um valor inteiro")
+                    if 1<=numExc<=len(T):
+                        del T[numExc]
+            
+                with open('treinos.txt','w',encoding='utf8') as arquivotxt:
+                    for i in T:
+                        arquivotxt.write(T[i])
+            except FileNotFoundError:
+                print("Arquivo não encontrado")
 
-        print("Treino excluído com sucesso")
+            print("Treino excluído com sucesso")
 
     elif excT_C=="C":
-        try:
-            with open('competicoes.txt','r',encoding='utf8') as arquivotxt:
-                print("Competições disponíveis para exclur: ")
-                for i in C:
-                    print(f"{i}: {C[i]}")
-                try:
-                    numExc = int(input("Digite o número do registro de competição que você quer excluir: "))
-                except ValueError:
-                    print("Digite um valor inteiro")
-                if 1<=numExc<=len(C):
-                    del C[numExc]
-                    del distanciaPaceC[numExc]
-                    del tempoPaceC[numExc]
-            with open('competicoes.txt','w',encoding='utf8') as arquivotxt:
-                for i in C:
-                    arquivotxt.writelines(C[i])
-        except FileNotFoundError:
-            print("Arquivo não encontrado")
+        if not C:
+            print("Não há competições registradas")
+        else:
+            try:
+                with open('competicoes.txt','r',encoding='utf8') as arquivotxt:
+                    print("Competições disponíveis para exclur: ")
+                    for i in C:
+                        print(f"{i}: {C[i]}")
+                    try:
+                        numExc = int(input("Digite o número do registro de competição que você quer excluir: "))
+                    except ValueError:
+                        print("Digite um valor inteiro")
+                    if 1<=numExc<=len(C):
+                        del C[numExc]
+                    
+                with open('competicoes.txt','w',encoding='utf8') as arquivotxt:
+                    for i in C:
+                        arquivotxt.writelines(C[i])
+            except FileNotFoundError:
+                print("Arquivo não encontrado")
 
-        print("Competição excluída com sucesso")
+            print("Competição excluída com sucesso")
 
     else:
         print("Opção inválida")
@@ -246,141 +256,163 @@ def FaddMeta():
 
 def FupdtMeta():
     if updtMetaT_C=="T":
-        total_corridoT=0
-        print("Metas e desafios de treino disponíveis para atualização: ")
-        for i in MDT:
-            print(f"{i}: {MDT[i]}")
-        try:
-            numUpdtMeta = int(input("Digite o número da meta de treino que você quer atualizar o progresso: "))
-            km_corridos = float(input("Digite a distância já corrida (Em Km): "))
-        except ValueError:
-            print("Alguma informação digitada é inválida")
-        total_corridoT+=km_corridos
-        distancia_faltando = int(distanciaM[numUpdtMeta])-total_corridoT
-        distanciaM[numUpdtMeta] = distancia_faltando
-        if (distancia_faltando)>0:
-            print("Progresso em meta de treino atualizado com sucesso!")
-            print(f"Ainda faltam {distancia_faltando}Km para bater a meta")
+        if not MDT:
+            print("Não há metas de treino registradas")
         else:
-            print(f"Parabéns! Você bateu a {numUpdtMeta}ª meta de treinos!")
-            del MDT[numUpdtMeta]
+            total_corridoT=0
+            print("Metas e desafios de treino disponíveis para atualização: ")
+            for i in MDT:
+                print(f"{i}: {MDT[i]}")
+            try:
+                numUpdtMeta = int(input("Digite o número da meta de treino que você quer atualizar o progresso: "))
+                km_corridos = float(input("Digite a distância já corrida (Em Km): "))
+            except ValueError:
+                print("Alguma informação digitada é inválida")
+            total_corridoT+=km_corridos
+            distancia_faltando = int(distanciaM[numUpdtMeta])-total_corridoT
+            distanciaM[numUpdtMeta] = distancia_faltando
+            if (distancia_faltando)>0:
+                print("Progresso em meta de treino atualizado com sucesso!")
+                print(f"Ainda faltam {distancia_faltando}Km para bater a meta")
+            else:
+                print(f"Parabéns! Você bateu a {numUpdtMeta}ª meta de treinos!")
+                del MDT[numUpdtMeta]
     
     elif updtMetaT_C=="C":
-        total_corridoC=0
-        print("Metas e desafios de competição disponíveis para atualização: ")
-        for i in MDT:
-            print(f"{i}: {MDT[i]}")
-        try:
-            numUpdtMeta = int(input("Digite o número da meta de competição que você quer atualizar o progresso: "))
-            km_corridos = float(input("Digite a distância já corrida (Em Km): "))
-        except ValueError:
-            print("Alguma informação digitada é inválida")
-        total_corridoC+=km_corridos
-        distancia_faltando = int(distanciaM[numUpdtMeta])-total_corridoC
-        distanciaM[numUpdtMeta-1] = distancia_faltando
-        if (distancia_faltando)>0:
-            print("Progresso de meta de competição atualizado com sucesso!")
-            print(f"Ainda faltam {distancia_faltando}Km para bater a meta")
+        if not MDC:
+            print("Não há metas de competição registradas")
         else:
-            print(f"Parabéns! Você bateu a {numUpdtMeta}ª meta de competições!")
-            del MDC[numUpdtMeta]
-    
+            total_corridoC=0
+            print("Metas e desafios de competição disponíveis para atualização: ")
+            for i in MDT:
+                print(f"{i}: {MDT[i]}")
+            try:
+                numUpdtMeta = int(input("Digite o número da meta de competição que você quer atualizar o progresso: "))
+                km_corridos = float(input("Digite a distância já corrida (Em Km): "))
+            except ValueError:
+                print("Alguma informação digitada é inválida")
+            total_corridoC+=km_corridos
+            distancia_faltando = int(distanciaM[numUpdtMeta])-total_corridoC
+            distanciaM[numUpdtMeta-1] = distancia_faltando
+            if (distancia_faltando)>0:
+                print("Progresso de meta de competição atualizado com sucesso!")
+                print(f"Ainda faltam {distancia_faltando}Km para bater a meta")
+            else:
+                print(f"Parabéns! Você bateu a {numUpdtMeta}ª meta de competições!")
+                del MDC[numUpdtMeta]
+        
     else:
         print("Opção inválida")
 
 def Fextra():
     if paceT_C=="T":
-        print("Treinos registrados: ")
-        for i in T:
-            print(f"{i}. {T[i]}")
-        try:
-            numPace = int(input("Digite o número do treino que você quer calcular o pace: "))
-            if tempoPaceT[numPace-1]!=0:
-                pace = int(distanciaPaceT[numPace-1])/int(tempoPaceT[numPace-1])
-        except ValueError:
-            print("Alguma informação digitada é inválida")
-        print(f"O pace do {numPace}º treino é {pace}Km/h")
+        if not T:
+            print("Não há treinos registrados")
+        else:
+            print("Treinos registrados: ")
+            for i in T:
+                print(f"{i}. {T[i]}")
+            try:
+                numPace = int(input("Digite o número do treino que você quer calcular o pace: "))
+                if tempoPaceT[numPace-1]!=0:
+                    pace = int(distanciaPaceT[numPace-1])/int(tempoPaceT[numPace-1])
+            except ValueError:
+                print("Alguma informação digitada é inválida")
+            print(f"O pace do {numPace}º treino é {pace}Km/h")
 
     elif paceT_C=="C":
-        print("Competições registradas: ")
-        for i in C:
-            print(f"{i}. {C[i]}")
-        try:     
-            numPace = int(input("Digite o número da competição que você quer calcular o pace: "))
-            if tempoPaceC[numPace-1]!=0:
-                pace = int(distanciaPaceC[numPace-1])/int(tempoPaceC[numPace-1])
-        except ValueError:
-            print("Alguma informação digitada é inválida")
-        print(f"O pace da {numPace}ª competição é {pace}Km/h") 
+        if not C:
+            print("Não há competições registradas")
+        else:
+            print("Competições registradas: ")
+            for i in C:
+                print(f"{i}. {C[i]}")
+            try:     
+                numPace = int(input("Digite o número da competição que você quer calcular o pace: "))
+                if tempoPaceC[numPace-1]!=0:
+                    pace = int(distanciaPaceC[numPace-1])/int(tempoPaceC[numPace-1])
+            except ValueError:
+                print("Alguma informação digitada é inválida")
+            print(f"O pace da {numPace}ª competição é {pace}Km/h") 
 
     else:
         print("Opção inválida")  
 
 def Ffiltrar():
-    if filtT_C == "T":  
-        try:
-            with open('treinos.txt', 'r', encoding='utf8') as arquivotxt:
-                treinos = arquivotxt.readlines()
-                print("\tTodos os treinos: ")
-                print("".join(treinos).strip())
-                dis_ou_temp = input("\tDigite [D] para filtrar por distância \tDigite [T] para filtrar por tempo: ").upper()
-                if dis_ou_temp == "D":
-                    distancia = float(input("Digite a distância desejada: "))
-                    filtrados = [treino for treino in treinos if str(distancia) in treino]
-                    if filtrados:
-                        print("\tEsses são os treinos filtrados por distância:")
-                        for treino in filtrados:
-                            print(treino.strip())
-                    else:
-                        print("\nNenhum treino encontrado")
-                elif dis_ou_temp == "T":
-                    tempo = float(input("Digite o tempo desejado(em horas): "))
-                    filtrados = [treino for treino in treinos if str(tempo) in treino]
-                    if filtrados:
-                        print("\tEsses são os treinos filtrados por tempo: ")
-                        for treino in filtrados:
-                            print(treino.strip())
-                    else:
-                        print("\nNenhum treino encontrado")
-                else:   
-                    print("Opção inválida")
-        except FileNotFoundError:
-            print("\nArquivo 'treinos.txt' não foi encontrado.")
+    if filtT_C == "T":
+        if not T:
+            print("Não há treinos registrados")
+        else:
+            try:
+                with open('treinos.txt', 'r', encoding='utf8') as arquivotxt:
+                    treinos = arquivotxt.readlines()
+                    print("\tTodos os treinos: ")
+                    print("".join(treinos).strip())
+                    dis_ou_temp = input("\tDigite [D] para filtrar por distância \tDigite [T] para filtrar por tempo: ").upper()
+                    if dis_ou_temp == "D":
+                        distancia = float(input("Digite a distância desejada: "))
+                        filtrados = [treino for treino in treinos if str(distancia) in treino]
+                        if filtrados:
+                            print("\tEsses são os treinos filtrados por distância:")
+                            for treino in filtrados:
+                                print(treino.strip())
+                        else:
+                            print("\nNenhum treino encontrado")
+                    elif dis_ou_temp == "T":
+                        tempo = float(input("Digite o tempo desejado(em horas): "))
+                        filtrados = [treino for treino in treinos if str(tempo) in treino]
+                        if filtrados:
+                            print("\tEsses são os treinos filtrados por tempo: ")
+                            for treino in filtrados:
+                                print(treino.strip())
+                        else:
+                            print("\nNenhum treino encontrado")
+                    else:   
+                        print("Opção inválida")
+            except FileNotFoundError:
+                print("\nArquivo 'treinos.txt' não foi encontrado.")
+
     elif filtT_C == 'C':
-        try:
-            with open('competicoes.txt', 'r', encoding='utf8') as arquivotxt:
-                competicoes = arquivotxt.readlines()
-                print("\tTodas competições: ")
-                print("".join(competicoes).strip())
-                dis_ou_temp = input("\tDigite [D] para filtrar por distância \tDigite [T] para filtrar por tempo: ").upper()
-                if dis_ou_temp == "D":
-                    distancia = float(input("Digite a distância desejada: "))
-                    filtrados = [competicao for competicao in competicoes if str(distancia) in competicao]
-                    if filtrados:
-                        print("\tEssas são as competições filtrados por distância:")
-                        for competicao in filtrados:
-                            print(competicao.strip())
+        if not C:
+            print("Não há competições registradas")
+        else:
+            try:
+                with open('competicoes.txt', 'r', encoding='utf8') as arquivotxt:
+                    competicoes = arquivotxt.readlines()
+                    print("\tTodas competições: ")
+                    print("".join(competicoes).strip())
+                    dis_ou_temp = input("\tDigite [D] para filtrar por distância \tDigite [T] para filtrar por tempo: ").upper()
+                    if dis_ou_temp == "D":
+                        distancia = float(input("Digite a distância desejada: "))
+                        filtrados = [competicao for competicao in competicoes if str(distancia) in competicao]
+                        if filtrados:
+                            print("\tEssas são as competições filtrados por distância:")
+                            for competicao in filtrados:
+                                print(competicao.strip())
+                        else:
+                            print("\nNenhum competicao encontrada")
+                    elif dis_ou_temp == "T":
+                        tempo = float(input("Digite o tempo desejado(em horas): "))
+                        filtrados = [competicao for competicao in competicoes if str(tempo) in competicao]
+                        if filtrados:
+                            print("\tEssas são as competições filtrados por tempo: ")
+                            for competicao in competicoes:
+                                print(competicao.strip())
+                        else:
+                            print("\nNenhum competicao encontrada")
                     else:
-                        print("\nNenhum competicao encontrada")
-                elif dis_ou_temp == "T":
-                    tempo = float(input("Digite o tempo desejado(em horas): "))
-                    filtrados = [competicao for competicao in competicoes if str(tempo) in competicao]
-                    if filtrados:
-                        print("\tEssas são as competições filtrados por tempo: ")
-                        for competicao in competicoes:
-                            print(competicao.strip())
-                    else:
-                        print("\nNenhum competicao encontrada")
-                else:
-                    print("Opção inválida")
-        except FileNotFoundError:
-                print("\nArquivo 'competicoes.txt' não foi encontrado.")
+                        print("Opção inválida")
+            except FileNotFoundError:
+                    print("\nArquivo 'competicoes.txt' não foi encontrado.")
     else:
         print("\nOpção inválida")
 
 def Falea():
     treino_aleatorio=random.choice(T)
-    print(f"TREINO SUGERIDO->{treino_aleatorio}")
+    if not T:
+        print("Não há treinos registrados")
+    else:
+        print(f"TREINO SUGERIDO->{treino_aleatorio}")
 
 while opc!=10:
     print("1. Fazer um registro")
