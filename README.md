@@ -63,4 +63,4 @@ Todas as funcionalidades foram desenvolvidas para serem **intuitivas e diretas**
 ---
 
 ### [Visite nosso repositório no GitHub](https://github.com/LucaAlbuquerque/TrabalhoPython2)
-### [Fluxograma do nosso projeto] (https://miro.com/welcomeonboard/d1M0bjdSekpWVWNjZTRMZWJITlZXaG5KS3M2T1FTSGExVnBRTnNwQ1pGTW9KNkpmYjBwbjdTWmQzblRuRUt1bW8wUTdTalJ4d3NKTGgyRVFKRGR4eHBXZ2xYaTFsUENTdS9wV3VKdmtFVlVPdmdtVk82RGlabWlUZlZvQnVGTXghZQ==?share_link_id=684801530008)
+### [Fluxograma do nosso projeto](https://miro.com/app/board/uXjVLCpWKbg=/)
