@@ -37,7 +37,7 @@ A plataforma conta com **9 funcionalidades principais**, descritas a seguir:
 6. **Atualizar o Progresso das Metas e Desafios**  
    - O usuário pode acompanhar e atualizar os KMs já percorridos e quanto ainda falta para atingir sua meta.
 
-7. **Calcular o Pace (Velocidade Média)**  #FUNCIONALIDADE EXTRA
+7. **Calcular o Pace (Velocidade Média)**
    - Baseado nos registros de treino ou competição, o sistema calcula o pace (tempo médio por quilômetro).
 
 8. **Filtrar os Registros**  
