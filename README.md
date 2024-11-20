@@ -32,22 +32,21 @@ A plataforma conta com **9 funcionalidades principais**, descritas a seguir:
    - O sistema pergunta:  
      - Meta relacionada a treino ou competição?  
      - Tempo para atingir a meta (semanas, meses ou anos)?  
-     - Meta desejada (em KM).  
+     - Meta desejada (em quilômetros).  
 
 6. **Atualizar o Progresso das Metas e Desafios**  
    - O usuário pode acompanhar e atualizar os KMs já percorridos e quanto ainda falta para atingir sua meta.
 
-7. **Calcular o Pace (Velocidade Média)**  #FUNCIONALIDADE EXTEA
+7. **Calcular o Pace (Velocidade Média)**  #FUNCIONALIDADE EXTRA
    - Baseado nos registros de treino ou competição, o sistema calcula o pace (tempo médio por quilômetro).
 
 8. **Filtrar os Registros**  
    - Organize os treinos e competições por critérios como:  
      - Distância  
      - Tempo  
-     - Data  
-
+       
 9. **Sugestão de Treino Aleatório**  
-   - Sugere um treino completamente aleatório, ideal para variar a rotina.
+   - Sugere um treino completamente aleatório, ideal para variar a rotina do atleta.
 
 ---
 
