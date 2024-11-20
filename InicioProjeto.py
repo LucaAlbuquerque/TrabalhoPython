@@ -396,7 +396,7 @@ def Ffiltrar():
                         filtrados = [competicao for competicao in competicoes if str(tempo) in competicao]
                         if filtrados:
                             print("\tEssas são as competições filtrados por tempo: ")
-                            for competicao in competicoes:
+                            for competicao in filtrados:
                                 print(competicao.strip())
                         else:
                             print("\nNenhum competicao encontrada")
