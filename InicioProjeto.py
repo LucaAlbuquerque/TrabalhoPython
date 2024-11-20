@@ -319,13 +319,16 @@ def Fextra():
 def Ffiltrar():
     if filtT_C == "T":  
         try:
+
             print("Treinos disponíveis para filtragem: ")
             for i in T:
                 print(f"{i}. {T[i]}")
-                dis_ou_temp = input("Quer filtrar por distância ou tempo? (D / T): ").upper()
+            dis_ou_temp = input("Quer filtrar por distância ou tempo? (D / T): ").upper()
             if dis_ou_temp == "D":
                 distancia = float(input("Digite a distância que será filtrada (Em Km): "))
-                filtrados = [treino for treino in T if str(distancia) in treino]
+                for i in distanciaF:
+                    
+
                 if filtrados:
                     print("Treinos filtrados por distância:")
                     for treino in filtrados:
@@ -351,7 +354,7 @@ def Ffiltrar():
             print("Competições disponíveis para filtragem: ")
             for i in C:
                 print(f"{i}. {C[i]}")
-                dis_ou_temp = input("Quer filtrar por distância ou tempo? (D / T): ").upper()
+            dis_ou_temp = input("Quer filtrar por distância ou tempo? (D / T): ").upper()
             if dis_ou_temp == "D":
                 distancia = float(input("Digite a distância que será filtrada (Em Km): "))
                 filtrados = [competicao for competicao in C if str(distancia) in competicao]
