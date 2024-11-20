@@ -319,68 +319,64 @@ def Fextra():
 def Ffiltrar():
     if filtT_C == "T":  
         try:
-
-            print("Treinos disponíveis para filtragem: ")
-            for i in T:
-                print(f"{i}. {T[i]}")
-            dis_ou_temp = input("Quer filtrar por distância ou tempo? (D / T): ").upper()
-            if dis_ou_temp == "D":
-                distancia = float(input("Digite a distância que será filtrada (Em Km): "))
-                for i in distanciaF:
-                    
-
-                if filtrados:
-                    print("Treinos filtrados por distância:")
-                    for treino in filtrados:
-                        print(treino)
-                else:
-                    print("Não foram encontrados treinos para serem filtrados")
-            elif dis_ou_temp == "T":
-                tempo = float(input("Digite o tempo que será filtrado (Em horas): "))
-                filtrados = [treino for treino in T if str(tempo) in treino]
-                if filtrados:
-                    print("Treinos filtrados por tempo:")
-                    for treino in filtrados:
-                        print(treino)
+            with open('treinos.txt', 'r', encoding='utf8') as arquivotxt:
+                treinos = arquivotxt.readlines()
+                print("\tTodos os treinos: ")
+                print("".join(treinos).strip())
+                dis_ou_temp = input("\tDigite [D] para filtrar por distância \tDigite [T] para filtrar por tempo: ").upper()
+                if dis_ou_temp == "D":
+                    distancia = float(input("Digite a distância desejada: "))
+                    filtrados = [treino for treino in treinos if str(distancia) in treino]
+                    if filtrados:
+                        print("\tEsses são os treinos filtrados por distância:")
+                        for treino in filtrados:
+                            print(treino.strip())
                     else:
-                        print("Não foram encontrados treinos para serem filtrados")
-            else:
-                print("Opção inválida")
-        except ValueError:
-            print("Alguma informação digitada é inválida")
-
-    elif filtT_C == "C":
+                        print("\nNenhum treino encontrado")
+                elif dis_ou_temp == "T":
+                    tempo = float(input("Digite o tempo desejado(em horas): "))
+                    filtrados = [treino for treino in treinos if str(tempo) in treino]
+                    if filtrados:
+                        print("\tEsses são os treinos filtrados por tempo: ")
+                        for treino in filtrados:
+                            print(treino.strip())
+                    else:
+                        print("\nNenhum treino encontrado")
+                else:   
+                    print("Opção inválida")
+        except FileNotFoundError:
+            print("\nArquivo 'treinos.txt' não foi encontrado.")
+    elif filtT_C == 'C':
         try:
-            print("Competições disponíveis para filtragem: ")
-            for i in C:
-                print(f"{i}. {C[i]}")
-            dis_ou_temp = input("Quer filtrar por distância ou tempo? (D / T): ").upper()
-            if dis_ou_temp == "D":
-                distancia = float(input("Digite a distância que será filtrada (Em Km): "))
-                filtrados = [competicao for competicao in C if str(distancia) in competicao]
-                if filtrados:
-                    print("Competições filtradas por distância: ")
-                    for competicao in filtrados:
-                        print(competicao)
-                else:
-                    print("Não foram encontradas competições para serem filtradas")
-            elif dis_ou_temp == "T":
-                tempo = float(input("Digite o tempo que será filtrado (Em horas): "))
-                filtrados = [competicao for competicao in C if str(tempo) in competicao]
-                if filtrados:
-                    print("Competições filtradas por tempo: ")
-                    for competicao in filtrados:
-                        print(competicao)
+            with open('competicoes.txt', 'r', encoding='utf8') as arquivotxt:
+                competicoes = arquivotxt.readlines()
+                print("\tTodas competições: ")
+                print("".join(competicoes).strip())
+                dis_ou_temp = input("\tDigite [D] para filtrar por distância \tDigite [T] para filtrar por tempo: ").upper()
+                if dis_ou_temp == "D":
+                    distancia = float(input("Digite a distância desejada: "))
+                    filtrados = [competicao for competicao in competicoes if str(distancia) in competicao]
+                    if filtrados:
+                        print("\tEssas são as competições filtrados por distância:")
+                        for competicao in filtrados:
+                            print(competicao.strip())
                     else:
-                        print("Não foram encontradas competições para serem filtradas")
-            else:
-                print("Opção inválida")
-
-        except ValueError:
-            print("Alguma informação digitada é inválida")
-
+                        print("\nNenhum competicao encontrada")
+                elif dis_ou_temp == "T":
+                    tempo = float(input("Digite o tempo desejado(em horas): "))
+                    filtrados = [competicao for competicao in competicoes if str(tempo) in competicao]
+                    if filtrados:
+                        print("\tEssas são as competições filtrados por tempo: ")
+                        for competicao in competicoes:
+                            print(competicao.strip())
+                    else:
+                        print("\nNenhum competicao encontrada")
+                else:
+                    print("Opção inválida")
+        except FileNotFoundError:
+                print("\nArquivo 'competicoes.txt' não foi encontrado.")
     else:
-        print("Opção inválida")
+        print("\nOpção inválida")
 
 def Falea():
     treino_aleatorio=random.choice(T)
