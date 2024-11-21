@@ -408,12 +408,10 @@ def Ffiltrar():
         print("\nOpção inválida.")
 
 def Falea():
-    treino_aleatorio=random.choice(T)
-    if not T:
-        print("Não há treinos registrados.")
-    else:
-        print(f"TREINO SUGERIDO->{treino_aleatorio}")
-
+    dist=[10, 25, 30, 45, 50, 65, 70]
+    dist_suger=random.choice(dist)
+    print(f"Sugerimos {dist_suger} Km para você percorrer no seu próximo treino")
+    
 while opc!=10:
     print("1. Fazer um registro")
     print("2. Visualizar os registros")
