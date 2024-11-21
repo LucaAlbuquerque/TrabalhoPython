@@ -1,2 +1,2 @@
-1º TREINO-> |Data: 21-09-2006|Distância: 5.0Km|Tempo de duração: 0.5h|Localização: Pina|Condição climática: Nublado
-2º TREINO-> |Data: 13-02-2006|Distância: 21.0Km|Tempo de duração: 2.0h|Localização: Candeias|Condição climática: Neve
+1º TREINO-> |Data: 21 |Distância: 12.0Km |Tempo de duração: 3.0h |Localização: 4 |Condição climática: 4
+2º TREINO-> |Data: 123 |Distância: 3.0Km |Tempo de duração: 4.0h |Localização: 44 |Condição climática: 44
